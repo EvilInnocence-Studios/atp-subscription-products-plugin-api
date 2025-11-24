@@ -4,11 +4,11 @@ import { IMigration } from "../../core/dbMigrations";
 
 const db = database();
 
-export const migrations:IMigration[] = [{
+export const migrations: IMigration[] = [{
     name: "init",
     module: "subscription-products-plugin",
     description: "Initialize the subscription products database schema with products and permissions.",
-    order: 0,
+    order: 2,
     down: () => db.schema
         .alterTable("products", (t) => {
             t.dropColumn("subscriptionOnly");
